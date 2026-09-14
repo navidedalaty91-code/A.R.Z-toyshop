@@ -230,6 +230,13 @@
     border-radius: 15px;
     background-color: #facc15;
 }
+.p-under-section-div{
+
+    min-width: 15rem;
+    white-space: wrap;
+    width: auto;
+    max-width: 32rem;
+}
 .price-and-button p{
     margin-right: 1rem;
 }
@@ -460,7 +467,7 @@
     /* دسته‌بندی‌ها */
 
     .a-simple-paragraph-1 > div {
-        gap: 0.7rem;
+        gap: 1.5rem;
         padding: 0 0.5rem;
     }
 
@@ -485,32 +492,40 @@
     width:100%;
     height:auto;
     min-height:0;
+        display: flex;
+    flex-direction: column;
 }
 .price-and-button {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    margin-bottom: .7rem;
 }
 .information{
     line-height: 2;
 }
-
+.price-and-button p {
+    text-align: right;
+    align-self: flex-start;
+    padding-right: 1rem;
+}
 
     /* عکس محصول */
 
     .Product div div img {
         width: 85%;
-        height: 5rem;
+        aspect-ratio: 16 / 9;
+        height: auto;
         object-fit: cover;
     }
 
     .p-under-product {
-        margin: 0.5rem 0.7rem;
-        font-size: 0.8rem;
+        margin: 0.8rem 1rem;
+        font-size: 1rem;
     }
 
     .information {
-        margin: 0.5rem 0.7rem;
-        font-size: 0.68rem;
+        margin: 0.5rem 1.5rem;
+        font-size: 0.7rem;
     }
 
     .price-and-button a {
@@ -518,11 +533,19 @@
         padding: 0.3rem;
         font-size: 0.65rem;
         white-space: nowrap;
+        width: 90%;
+        text-align: center;
     }
 
     .price-and-button p {
         margin-right: 0.3rem;
         font-size: 0.65rem;
+    }
+    .price-and-button {
+            display: flex;
+    flex-direction: column;
+    align-items: center;
+       gap: .5rem;
     }
 
 
@@ -662,7 +685,7 @@ svg{
         <section class="a-simple-paragraph">
             <div>
             <h2>دنیای رنگارنگ اسباب‌بازی‌ها 🎈</h2>
-            <p>اسباب‌بازی‌های جذاب برای کودکان، از عروسک و ماشین گرفته تا بازی‌های فکری و <br>ساختنی.</p>
+            <p class="p-under-section-div">اسباب‌بازی‌های جذاب برای کودکان، از عروسک و ماشین گرفته تا بازی‌های فکری و ساختنی.</p>
             <a href="#product" class="button-for-see-cards">مشاهده محصولات</a>
             </div>
             <div id="doll-under-section">
