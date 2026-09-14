@@ -327,9 +327,6 @@
     .main-div-in-footer {
         gap: 6rem;
     }
-    html{
-        overflow-x: hidden;
-    }
 
 }
 
@@ -384,9 +381,6 @@
     .main-div-in-footer {
         gap: 4rem;
     }
-    html{
-        overflow-x: hidden;
-    }
 
 }
 
@@ -410,13 +404,13 @@
         margin: 0 5px;
     }
 
-header > div:nth-child(2) {
-    width: 90%;
-}
+    header > div:nth-child(2) {
+        width: 90%;
+    }
 
-#main-search-box {
-    width: 100%;
-}
+    #main-search-box {
+        width: 100%;
+    }
 
 
     /* Hero */
@@ -424,11 +418,13 @@ header > div:nth-child(2) {
     .a-simple-paragraph {
         margin: 0 15px;
         min-height: auto;
+        height: auto;
         padding: 30px 20px;
         flex-direction: column;
         text-align: center;
     }
-    .doll{
+
+    .doll {
         display: none;
     }
 
@@ -444,6 +440,12 @@ header > div:nth-child(2) {
     #doll-under-section {
         margin: 20px 0 0;
         font-size: 70px;
+    }
+
+    .button-for-see-cards {
+        width: auto;
+        min-width: 130px;
+        white-space: nowrap;
     }
 
 
@@ -467,7 +469,7 @@ header > div:nth-child(2) {
     }
 
 
-    /* محصولات - دو کارت کنار هم */
+    /* محصولات */
 
     .main-div-under-product {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -475,40 +477,45 @@ header > div:nth-child(2) {
         padding: 0 0.7rem;
     }
 
-    .div-under-product {
-        width: 100%;
-        height: auto;
-        min-height: 17rem;
-    }
+.div-under-product {
+    width:100%;
+    height:auto;
+    min-height:0;
+}
+.price-and-button {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
 
 
     /* عکس محصول */
 
     .Product div div img {
         width: 85%;
-        height: 6rem;
+        height: 5rem;
         object-fit: cover;
     }
 
     .p-under-product {
-        margin: 0.8rem;
-        font-size: 0.85rem;
+        margin: 0.5rem 0.7rem;
+        font-size: 0.8rem;
     }
 
     .information {
-        margin: 0.7rem 0.8rem;
-        font-size: 0.72rem;
+        margin: 0.5rem 0.7rem;
+        font-size: 0.68rem;
     }
 
     .price-and-button a {
-        margin: 0.5rem;
-        padding: 0.35rem;
-        font-size: 0.7rem;
+        margin: 0.3rem;
+        padding: 0.3rem;
+        font-size: 0.65rem;
+        white-space: nowrap;
     }
 
     .price-and-button p {
-        margin-right: 0.5rem;
-        font-size: 0.7rem;
+        margin-right: 0.3rem;
+        font-size: 0.65rem;
     }
 
 
@@ -525,9 +532,7 @@ header > div:nth-child(2) {
         height: auto;
         padding: 2rem 1rem;
     }
-        html{
-        overflow-x: hidden;
-    }
+
 }
 
 
@@ -546,10 +551,6 @@ header > div:nth-child(2) {
         font-size: 0.85rem;
     }
 
-/* #main-search-box {
-    width: 13rem;
-} */
-
 
     /* Hero */
 
@@ -566,7 +567,9 @@ header > div:nth-child(2) {
     }
 
     .button-for-see-cards {
-        width: 130px;
+        width: auto;
+        min-width: 120px;
+        white-space: nowrap;
     }
 
 
@@ -577,7 +580,7 @@ header > div:nth-child(2) {
     }
 
 
-    /* محصولات - همچنان دو کارت کنار هم */
+    /* محصولات */
 
     .main-div-under-product {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -585,9 +588,9 @@ header > div:nth-child(2) {
         padding: 0 0.5rem;
     }
 
-    .div-under-product {
-        min-height: 16rem;
-    }
+.div-under-product {
+    height:auto;
+}
 
 
     /* عکس کوچک‌تر */
@@ -599,24 +602,25 @@ header > div:nth-child(2) {
     }
 
     .p-under-product {
-        margin: 0.7rem;
-        font-size: 0.78rem;
+        margin: 0.5rem 0.6rem;
+        font-size: 0.75rem;
     }
 
     .information {
-        margin: 0.6rem 0.7rem;
-        font-size: 0.65rem;
+        margin: 0.5rem 0.6rem;
+        font-size: 0.62rem;
     }
 
     .price-and-button a {
-        margin: 0.4rem;
+        margin: 0.3rem;
         padding: 0.3rem;
-        font-size: 0.65rem;
+        font-size: 0.6rem;
+        white-space: nowrap;
     }
 
     .price-and-button p {
-        margin-right: 0.4rem;
-        font-size: 0.65rem;
+        margin-right: 0.3rem;
+        font-size: 0.6rem;
     }
 
 
@@ -626,9 +630,7 @@ header > div:nth-child(2) {
         width: 100%;
         gap: 1.5rem;
     }
-    html{
-        overflow-x: hidden;
-    }
+
 }
 svg{
     color: white;
