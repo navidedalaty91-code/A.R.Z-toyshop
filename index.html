@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>A.R.Z toyshop | فروشگاه اسباب‌بازی</title>
     <link rel="stylesheet" href="./reset.css">
     <style>
     @font-face {
@@ -175,11 +175,23 @@
 .Product div div img{
     width: 16rem;
 }
+.header-of-cards{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    align-items: center;
+}
 .Product h2{
-        margin-right: 4rem;
+    margin-right: 4rem;
     font-size: 1.5rem;
     font-weight: 900;
     margin-bottom: 1.5rem;
+
+}
+.a-under-header-of-cards{
+    text-decoration: none;
+    color: #1d4ed8;
+    margin-left: 5rem;
 }
 .div-under-product{
 
@@ -291,6 +303,7 @@
     text-align: center;
     color: #fff;
 }
+
 @media (hover: hover) and (pointer: fine) {
     .price-and-button a:hover{
     background-color: #fbbf24;
@@ -673,7 +686,7 @@ svg{
 <body>
     <header>
         <div>
-            <h1><span class="title1">toy</span><span class="title2">market</span></h1>
+            <h1><span class="title1">A.R.Z toy</span><span class="title2">shop</span></h1>
         </div>
         <div><input type="text" placeholder="محصول مورد نظر را وارد کنید..." id="main-search-box"></div>
         <nav>
@@ -744,10 +757,13 @@ svg{
             </div>
         </section>
         <section class="Product" id="product">
+            <div class="header-of-cards">
             <h2>محصولات</h2>
+            <a href="#" class="a-under-header-of-cards">مشاهده همه ←</a>
+            </div>
             <div class="main-div-under-product">
                 <div class="div-under-product">
-                    <img src="./images/photo_2026-09-13_22-49-22.jpg" alt="">
+                    <img src="./images/photo_2026-09-13_22-49-22.jpg" alt="ست نجاری دلر باتری خور">
                     <p class="p-under-product">ست نجاری دلر باتری خور</p>
                     <p class="information">ست ابزار مهندسی جذاب و سرگرم‌کننده🔨</p>
                     <div class="price-and-button">
@@ -756,7 +772,7 @@ svg{
                     </div>
                 </div>
                 <div class="div-under-product">
-                    <img src="./images/photo_2026-09-13_22-49-28.jpg" alt="">
+                    <img src="./images/photo_2026-09-13_22-49-28.jpg" alt="کنسول بازی 500 بازی">
                     <p class="p-under-product">کنسول بازی ۵۰۰ بازی </p>
                     <p class="information">گیم‌پد شارژی با ۵۰۰ بازی متنوع 🎮</p>
                 <div class="price-and-button">
@@ -765,7 +781,7 @@ svg{
                 </div>
                 </div>
                 <div class="div-under-product">
-                    <img src="./images/Untitled-1.png" alt="">
+                    <img src="./images/Untitled-1.png" alt="ست بافت مو">
                     <p class="p-under-product">ست بافت مو</p>
                     <p class="information">ست جذاب برای بافت مو 🎀</p>
                 <div class="price-and-button">
@@ -774,7 +790,7 @@ svg{
                 </div>
                 </div>
                 <div class="div-under-product">
-                    <img src="./images/photo_2026-09-13_22-49-19.jpg" alt="">
+                    <img src="./images/photo_2026-09-13_22-49-19.jpg" alt="ست ناخن و ارایشی">
                     <p class="p-under-product">ست ناخن و ارایشی</p>
                     <p class="information">ست جذاب ناخن 💅</p>
                 <div class="price-and-button">
@@ -783,7 +799,7 @@ svg{
                 </div>
                 </div>
                 <div class="div-under-product">
-                    <img src="./images/photo_2026-09-13_22-49-25.jpg" alt="">
+                    <img src="./images/photo_2026-09-13_22-49-25.jpg" alt="تفنگ دوکاره توپی و اب پاش">
                     <p class="p-under-product">تفنگ ۲ کاره توپی و ابپاش</p>
                     <p class="information">دو بازی در یک تفنگ جذاب 🎯</p>
                 <div class="price-and-button">
@@ -791,7 +807,7 @@ svg{
                     <a href="#">مشاهده محصول</a>
                 </div>
                 </div>                <div class="div-under-product">
-                    <img src="./images/photo_2026-09-13_22-49-30.jpg" alt="">
+                    <img src="./images/photo_2026-09-13_22-49-30.jpg" alt="دوربین عکاسی چاپگردار">
                     <p class="p-under-product">دوربین عکاسی چاپ گردار</p>
                     <p class="information"> لحظه‌ها را ثبت و چاپ کن📸</p>
                 <div class="price-and-button">
@@ -799,15 +815,16 @@ svg{
                     <a href="#">مشاهده محصول</a>
                 </div>
                 </div>                <div class="div-under-product">
-                    <img src="./images/photo_2026-09-13_22-49-33.jpg" alt="">
+                    <img src="./images/photo_2026-09-13_22-49-33.jpg" alt="بوکسینگ شارژی بلوتوثی">
                     <p class="p-under-product">بوکسینگ شارژی بلوتوث </p>
                     <p class="information">مبارزه هیجان‌انگیز با بلوتوث 🥊</p>
                 <div class="price-and-button">
                     <p class="p-under-product-1">۵,۱۰۰,۰۰۰</p>
                     <a href="#">مشاهده محصول</a>
                 </div>
-                </div>                <div class="div-under-product">
-                    <img src="./images/photo_2026-09-13_22-49-35.jpg" alt="">
+                </div>                
+                <div class="div-under-product">
+                    <img src="./images/photo_2026-09-13_22-49-35.jpg" alt="هواپیما کنترلی">
                     <p class="p-under-product">هواپیما کنترلی</p>
                     <p class="information">پروازی هیجان‌انگیز و سرگرم‌کننده ✈️</p>
                 <div class="price-and-button">
@@ -821,7 +838,7 @@ svg{
     <footer class="footer" id="footer">
         <div  class="main-div-in-footer">
         <div>
-        <h6 class="footer-head">🧸toymarket</h6>
+        <h6 class="footer-head">🧸A.R.Z toyshop</h6>
         <p>فروشگاه آنلاین اسباب‌بازی با مجموعه‌ای<br> از محصولات جذاب و سرگرم‌کننده برای کودکان.</p>
         </div>
         <div>
@@ -834,9 +851,9 @@ svg{
         </div>
         <div>
             <h6 class="footer-head">ارتباط با ما</h6>
-            <p>تلفن : 021111111</p>
+            <a href="tel:05133682848" style="text-decoration: none;color: #fff">تلفن: 05133682848</a>
             <div class="social-icons">
-                <a href="#">
+                <a href="https://www.instagram.com/arz_toys?stkn=MTI5OXJsMmo5ZjV4Yw==">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon1"
                 width="30"
                 height="30"
@@ -851,7 +868,7 @@ svg{
                 <circle cx="17.5" cy="6.5" r="1"></circle>
             </svg>
             </a>
-            <a href="#">
+            <a href="https://t.me/joinchat/AAAAAD0H10K_He_VM_z60Q">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon2"
                 width="30"
                 height="30"
