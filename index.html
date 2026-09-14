@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+    @font-face {
+    font-family: "Vazir";
+    src : url(./font/Vazir.woff2) format("woff2"),          
+    url(./font/Vazir.woff) format("woff"),
+    url(./font/Vazir.ttf) format("truetype");
+    font-weight: 400;
+    }
+    @font-face {
+    font-family: "Vazir";
+    src : url(./font/Vazir-Black.woff2) format("woff2"),          
+    url(./font/Vazir-Black.woff) format("woff"),
+    url(./font/Vazir-Black.ttf) format("truetype");
+    font-weight: 900;
+    }
+    @font-face {
+    font-family: "Vazir";
+    src : url(./font/Vazir-Medium.woff2) format("woff2"),          
+    url(./font/Vazir-Medium.woff) format("woff"),
+    url(./font/Vazir-Medium.ttf) format("truetype");
+    font-weight: 500;
+    }
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    html{
+        font-family: Vazir;
+        background-color: #f8fafc;
+        overflow-x: hidden;
+        scroll-behavior: smooth ;
+    }
+    header{
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: #e2e8f0 solid 1px;
+        position: fixed;
+        top: 0;
+        left: 0%;
+        right: 0%;
+        z-index: 1000;
+        height: 60px;
+        padding: 10px 30px;
+    }
+    .title2{
+        color: #2563eb;
+    }
+    .title1{
+        color: #f59e0b;
+    }
+    header h1{
+    font-size: xx-large;
+    font-weight: bold;
+    }
+    nav a{
+        margin: 0 10px;
+        text-decoration: none;
+        color: #475569;
+    }
+    nav a:last-child{
+    margin-left: 20px;
+    }
+
+    #main-search-box{
+        background-color: #d4d4d4;
+        width: 500px;
+        height: 35px;
+        border-radius: 20px;
+        border: none;
+        padding: 2px 20px;
+        transition: all 0.3s ease;
+        font-family: Vazir;
+    }
+    #main-search-box:focus{
+        outline: none;
+        transform: scale(1.05);
+    }
+    #main-search-box:hover{
+        background-color: #bebebe;
+    }
+    main{
+        margin-top: 120px;
+    }
+    .a-simple-paragraph{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 70px;
+        background-color: #dbeafe;
+        padding: 50px 40px;
+        border-radius: 15px;
+    min-height: 25rem;
+    height: auto;
+    max-height: 30rem;
+    }
+    .a-simple-paragraph div h2{
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        color: #2563eb;
+    }
+    .a-simple-paragraph div p{
+        line-height: 2;
+        font-size: larger;
+    }
+    #doll-under-section{
+        font-size: 100px;
+        margin-left: 30px;
+    }
+
+    .button-for-see-cards {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #2563eb;
+    border-radius: 20px;
+    padding: 8px 12px;
+    margin-top: 30px;
+    width: 150px;
+    text-align: center;
+    line-height: 24px;
+}
+.a-simple-paragraph-1 h2{
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-top: 2.5rem;
+    color: #1e293b;
+    margin-right: 4rem;
+}
+.a-simple-paragraph-1 > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.2rem 0;
+    gap: 2rem;
+}
+.Category{
+    border: #e2e8f0 solid 1px;
+    padding: 1.7rem 2rem ;
+    border-radius: 15px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+.Category:hover{
+    transform: scale(1.03) translateY(-1rem);
+    border-color: #2563eb;
+}
+.Category a h4{
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+}
+.Category a p{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.Category a{
+    text-decoration: none;
+    color: black;
+}
+
+.Product div div img{
+    width: 16rem;
+}
+.Product h2{
+        margin-right: 4rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+}
+.div-under-product{
+
+    background-color: #ffffff;
+    width: 18rem;
+    height: 20rem;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    padding-top: 0.2rem;
+    transition: all 0.3s ease;
+}
+
+
+.main-div-under-product{
+    display: grid;
+    grid-template-columns: repeat(4, 18rem);
+    justify-content: center;
+    gap: 1.5rem;
+}
+.div-under-product img{
+    display: block;
+    width: 16rem;
+    height: 10rem;
+    object-fit: cover;
+    margin: .1rem auto;
+    border-radius: 15px;
+}
+.p-under-product{
+    margin: 1.2rem 1.3rem;
+    font-size: 1.09rem;
+    font-weight: 500;
+}
+.information{
+    margin: 1.1rem 1.5rem 1.5rem;
+    font-size: 0.9rem;
+    color: #646464;
+}
+.price-and-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price-and-button a{
+    text-decoration: none;
+    color: black;
+    margin: 1rem 1.3rem;
+    padding: 0.5rem;
+    border-radius: 15px;
+    background-color: #facc15;
+}
+.price-and-button p{
+    margin-right: 1rem;
+}
+
+.p-under-product-1{
+    color: #1d4ed8;
+    font-weight: 900;
+}
+.footer{
+    background-color: #1e3a8a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        margin-top: 3rem;
+        height: 10rem;
+        line-height: 2;
+        color: #fff;
+}
+.quick-access{
+    display: flex;
+    flex-direction: column;
+}
+.footer-head{
+    font-size: 1.1rem;
+    font-weight: 900;
+    line-height: 3;
+}
+.quick-access a{
+    text-decoration: none;
+    color: #fff;
+}
+.main-div-in-footer{
+    display: flex;
+    align-items: flex-start;
+    gap: 10rem;
+    border-bottom:1px #fff solid;
+}
+.social-icons{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-icons svg{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.end-p{
+    background-color: #1e3a8a;
+    padding: 1rem 0;
+    text-align: center;
+    color: #fff;
+}
+@media (hover: hover) and (pointer: fine) {
+    .price-and-button a:hover{
+    background-color: #fbbf24;
+}
+.div-under-product:hover{
+    transform: scale(1.03) translateY(-1rem);
+    box-shadow: 0 0 1.5rem rgba(0,0,0,.5);
+}
+    nav a:hover{
+        color: #2563eb ;
+    }
+
+}
+/* =========================
+   1200px - Small Desktop
+   ========================= */
+
+@media (max-width: 1200px) {
+
+    header {
+        padding: 10px 20px;
+    }
+
+    #main-search-box {
+        width: 350px;
+    }
+
+    .a-simple-paragraph {
+        margin: 0 40px;
+    }
+
+    .a-simple-paragraph-1 > div {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .main-div-under-product {
+        grid-template-columns: repeat(3, 18rem);
+    }
+
+    .main-div-in-footer {
+        gap: 6rem;
+    }
+    html{
+        overflow-x: hidden;
+    }
+
+}
+
+
+/* =========================
+   900px - Tablet
+   ========================= */
+
+@media (max-width: 900px) {
+
+    header {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: xx-large;
+    }
+
+    #main-search-box {
+        width: 400px;
+    }
+
+    nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        margin-top: 150px;
+    }
+
+    .a-simple-paragraph {
+        margin: 0 25px;
+        padding: 30px;
+    }
+
+    .a-simple-paragraph div h2 {
+        font-size: 30px;
+    }
+
+    #doll-under-section {
+        font-size: 80px;
+    }
+
+    .main-div-under-product {
+        grid-template-columns: repeat(2, 18rem);
+    }
+
+    .main-div-in-footer {
+        gap: 4rem;
+    }
+    html{
+        overflow-x: hidden;
+    }
+
+}
+
+
+/* =========================
+   700px - Mobile
+   ========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        position: relative;
+        padding: 10px 15px;
+    }
+
+    main {
+        margin-top: 30px;
+    }
+
+    nav a {
+        margin: 0 5px;
+    }
+
+header > div:nth-child(2) {
+    width: 90%;
+}
+
+#main-search-box {
+    width: 100%;
+}
+
+
+    /* Hero */
+
+    .a-simple-paragraph {
+        margin: 0 15px;
+        min-height: auto;
+        padding: 30px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .doll{
+        display: none;
+    }
+
+    .a-simple-paragraph div h2 {
+        font-size: 27px;
+        margin-bottom: 20px;
+    }
+
+    .a-simple-paragraph div p {
+        font-size: 1rem;
+    }
+
+    #doll-under-section {
+        margin: 20px 0 0;
+        font-size: 70px;
+    }
+
+
+    /* عنوان بخش‌ها */
+
+    .a-simple-paragraph-1 h2,
+    .Product h2 {
+        margin-right: 1.5rem;
+    }
+
+
+    /* دسته‌بندی‌ها */
+
+    .a-simple-paragraph-1 > div {
+        gap: 0.7rem;
+        padding: 0 0.5rem;
+    }
+
+    .Category {
+        padding: 1.3rem 1rem;
+    }
+
+
+    /* محصولات - دو کارت کنار هم */
+
+    .main-div-under-product {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
+        padding: 0 0.7rem;
+    }
+
+    .div-under-product {
+        width: 100%;
+        height: auto;
+        min-height: 17rem;
+    }
+
+
+    /* عکس محصول */
+
+    .Product div div img {
+        width: 85%;
+        height: 6rem;
+        object-fit: cover;
+    }
+
+    .p-under-product {
+        margin: 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .information {
+        margin: 0.7rem 0.8rem;
+        font-size: 0.72rem;
+    }
+
+    .price-and-button a {
+        margin: 0.5rem;
+        padding: 0.35rem;
+        font-size: 0.7rem;
+    }
+
+    .price-and-button p {
+        margin-right: 0.5rem;
+        font-size: 0.7rem;
+    }
+
+
+    /* Footer */
+
+    .main-div-in-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer {
+        height: auto;
+        padding: 2rem 1rem;
+    }
+        html{
+        overflow-x: hidden;
+    }
+}
+
+
+/* =========================
+   450px - Small Mobile
+   ========================= */
+
+@media (max-width: 450px) {
+
+    header h1 {
+        font-size: x-large;
+    }
+
+    nav a {
+        margin: 0 3px;
+        font-size: 0.85rem;
+    }
+
+/* #main-search-box {
+    width: 13rem;
+} */
+
+
+    /* Hero */
+
+    .a-simple-paragraph {
+        padding: 20px 15px;
+    }
+
+    .a-simple-paragraph div h2 {
+        font-size: 23px;
+    }
+
+    .a-simple-paragraph div p {
+        font-size: 0.9rem;
+    }
+
+    .button-for-see-cards {
+        width: 130px;
+    }
+
+
+    /* دسته‌بندی */
+
+    .Category {
+        padding: 1.3rem 0.8rem;
+    }
+
+
+    /* محصولات - همچنان دو کارت کنار هم */
+
+    .main-div-under-product {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.6rem;
+        padding: 0 0.5rem;
+    }
+
+    .div-under-product {
+        min-height: 16rem;
+    }
+
+
+    /* عکس کوچک‌تر */
+
+    .Product div div img {
+        width: 85%;
+        height: 5rem;
+        object-fit: cover;
+    }
+
+    .p-under-product {
+        margin: 0.7rem;
+        font-size: 0.78rem;
+    }
+
+    .information {
+        margin: 0.6rem 0.7rem;
+        font-size: 0.65rem;
+    }
+
+    .price-and-button a {
+        margin: 0.4rem;
+        padding: 0.3rem;
+        font-size: 0.65rem;
+    }
+
+    .price-and-button p {
+        margin-right: 0.4rem;
+        font-size: 0.65rem;
+    }
+
+
+    /* Footer */
+
+    .main-div-in-footer {
+        width: 100%;
+        gap: 1.5rem;
+    }
+    html{
+        overflow-x: hidden;
+    }
+}
+svg{
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1><span class="title1">toy</span><span class="title2">market</span></h1>
+        </div>
+        <div><input type="text" placeholder="محصول مورد نظر را وارد کنید..." id="main-search-box"></div>
+        <nav>
+            <a href="#">خانه</a>
+            <a href="#simple-p">دسته‌بندی‌ها</a>
+            <a href="#product">محصولات</a>
+            <a href="#footer">درباره ما</a>
+        </nav>
+
+    </header>
+    <main>
+        <section class="a-simple-paragraph">
+            <div>
+            <h2>دنیای رنگارنگ اسباب‌بازی‌ها 🎈</h2>
+            <p>اسباب‌بازی‌های جذاب برای کودکان، از عروسک و ماشین گرفته تا بازی‌های فکری و <br>ساختنی.</p>
+            <a href="#product" class="button-for-see-cards">مشاهده محصولات</a>
+            </div>
+            <div id="doll-under-section">
+            <p class="doll">🧸</p>
+            </div>
+        </section>
+
+        <section class="a-simple-paragraph-1" id="simple-p">
+            <h2>دسته بندی محصولات</h2>
+            <div>
+            <div class="Category">
+                <a href="#">
+                    <p>📸</p>
+                    <h4>دوربین و دیجیتال</h4>
+                </a>
+            </div>
+
+            <div class="Category">
+                <a href="#">
+                    <p>✈️</p>
+                    <h4>اسباب‌بازی‌های کنترلی</h4>
+                </a>
+            </div>
+
+                        <div class="Category">
+                <a href="#">
+                    <p>🎮</p>
+                    <h4>کنسول و بازی</h4>
+                </a>
+            </div>
+
+                        <div class="Category">
+                <a href="#">
+                    <p>💄</p>
+                    <h4>آرایشی و زیبایی</h4>
+                </a>
+            </div>
+
+                        <div class="Category">
+                <a href="#">
+                    <p>🔫</p>
+                    <h4>تفنگ و بازی‌های اکشن</h4>
+                </a>
+            </div>
+
+                        <div class="Category">
+                <a href="#">
+                    <p>🔨</p>
+                    <h4>ابزار و ساختنی</h4>
+                </a>
+            </div>
+
+            </div>
+        </section>
+        <section class="Product" id="product">
+            <h2>محصولات</h2>
+            <div class="main-div-under-product">
+                <div class="div-under-product">
+                    <img src="./images/photo_2026-09-13_22-49-22.jpg" alt="">
+                    <p class="p-under-product">ست نجاری دلر باتری خور</p>
+                    <p class="information">ست ابزار مهندسی جذاب و سرگرم‌کننده🔨</p>
+                    <div class="price-and-button">
+                    <p class="p-under-product-1">۲,۷۰۰,۰۰۰</p>
+                    <a href="#">مشاهده محصول</a>
+                    </div>
+                </div>
+                <div class="div-under-product">
+                    <img src="./images/photo_2026-09-13_22-49-28.jpg" alt="">
+                    <p class="p-under-product">کنسول بازی ۵۰۰ بازی </p>
+                    <p class="information">گیم‌پد شارژی با ۵۰۰ بازی متنوع 🎮</p>
+                <div class="price-and-button">
+                    <p class="p-under-product-1">۲,۸۰۰,۰۰۰</p>
+                    <a href="#">مشاهده محصول</a>
+                </div>
+                </div>
+                <div class="div-under-product">
+                    <img src="./images/Untitled-1.png" alt="">
+                    <p class="p-under-product">ست بافت مو</p>
+                    <p class="information">ست جذاب برای بافت مو 🎀</p>
+                <div class="price-and-button">
+                    <p class="p-under-product-1">۱,۳۰۰,۰۰۰</p>
+                    <a href="#">مشاهده محصول</a>
+                </div>
+                </div>
+                <div class="div-under-product">
+                    <img src="./images/photo_2026-09-13_22-49-19.jpg" alt="">
+                    <p class="p-under-product">ست ناخن و ارایشی</p>
+                    <p class="information">ست جذاب ناخن 💅</p>
+                <div class="price-and-button">
+                    <p class="p-under-product-1">۲,۰۰۰,۰۰۰</p>
+                    <a href="#">مشاهده محصول</a>
+                </div>
+                </div>
+                <div class="div-under-product">
+                    <img src="./images/photo_2026-09-13_22-49-25.jpg" alt="">
+                    <p class="p-under-product">تفنگ ۲ کاره توپی و ابپاش</p>
+                    <p class="information">دو بازی در یک تفنگ جذاب 🎯</p>
+                <div class="price-and-button">
+                    <p class="p-under-product-1">۲,۲۰۰,۰۰۰</p>
+                    <a href="#">مشاهده محصول</a>
+                </div>
+                </div>                <div class="div-under-product">
+                    <img src="./images/photo_2026-09-13_22-49-30.jpg" alt="">
+                    <p class="p-under-product">دوربین عکاسی چاپ گردار</p>
+                    <p class="information"> لحظه‌ها را ثبت و چاپ کن📸</p>
+                <div class="price-and-button">
+                    <p class="p-under-product-1">۴,۵۰۰,۰۰۰</p>
+                    <a href="#">مشاهده محصول</a>
+                </div>
+                </div>                <div class="div-under-product">
+                    <img src="./images/photo_2026-09-13_22-49-33.jpg" alt="">
+                    <p class="p-under-product">بوکسینگ شارژی بلوتوث </p>
+                    <p class="information">مبارزه هیجان‌انگیز با بلوتوث 🥊</p>
+                <div class="price-and-button">
+                    <p class="p-under-product-1">۵,۱۰۰,۰۰۰</p>
+                    <a href="#">مشاهده محصول</a>
+                </div>
+                </div>                <div class="div-under-product">
+                    <img src="./images/photo_2026-09-13_22-49-35.jpg" alt="">
+                    <p class="p-under-product">هواپیما کنترلی</p>
+                    <p class="information">پروازی هیجان‌انگیز و سرگرم‌کننده ✈️</p>
+                <div class="price-and-button">
+                    <p class="p-under-product-1">۳,۰۰۰,۰۰۰</p>
+                    <a href="#">مشاهده محصول</a>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" id="footer">
+        <div  class="main-div-in-footer">
+        <div>
+        <h6 class="footer-head">🧸toymarket</h6>
+        <p>فروشگاه آنلاین اسباب‌بازی با مجموعه‌ای<br> از محصولات جذاب و سرگرم‌کننده برای کودکان.</p>
+        </div>
+        <div>
+            <h6 class="footer-head">دسترسی سریع</h6>
+            <div class="quick-access">
+                <a href="#">خانه</a>
+                <a href="#product">محصولات</a>
+                <a href="#simple-p">دسته بندی ها</a>
+            </div>
+        </div>
+        <div>
+            <h6 class="footer-head">ارتباط با ما</h6>
+            <p>تلفن : 021111111</p>
+            <div class="social-icons">
+                <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon1"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+            </a>
+            <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon2"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="currentColor">
+                <path d="M21.9 4.2 18.8 19c-.2 1-1.1 1.3-1.9.8l-5.4-4-2.6 2.5c-.3.3-.5.5-1 .5l.4-5.5 10-9c.4-.4-.1-.6-.6-.2L5.3 12.2.1 10.6c-1.1-.3-1.1-1.1.2-1.6L20.5 1.3c.9-.3 1.7.2 1.4 1.9z"/>
+            </svg>
+            </a>
+            </div>
+        </div>
+        </div>
+        
+    </footer>
+    <p class="end-p">© تمامی حقوق برای ToyMarket محفوظ است.</p>
+</body>
+</html>
