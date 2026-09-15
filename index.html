@@ -46,6 +46,10 @@
         overflow-x: hidden;
         scroll-behavior: smooth ;
     }
+    body {
+    margin: 0;
+    overflow-x: hidden;
+}
     header{
         background-color: #ffffff;
         display: flex;
@@ -79,7 +83,7 @@
     margin-left: 20px;
     }
 
-    #main-search-box{
+    .main-search-box{
         background-color: #d4d4d4;
         width: 500px;
         height: 35px;
@@ -89,11 +93,11 @@
         transition: all 0.3s ease;
         font-family: Vazir;
     }
-    #main-search-box:focus{
+    .main-search-box:focus{
         outline: none;
         transform: scale(1.05);
     }
-    #main-search-box:hover{
+    .main-search-box:hover{
         background-color: #bebebe;
     }
     main{
@@ -336,7 +340,7 @@
         padding: 10px 20px;
     }
 
-    #main-search-box {
+    .main-search-box {
         width: 350px;
     }
 
@@ -377,7 +381,7 @@
         font-size: xx-large;
     }
 
-    #main-search-box {
+    .main-search-box {
         width: 400px;
     }
 
@@ -437,7 +441,7 @@
         width: 90%;
     }
 
-    #main-search-box {
+    .main-search-box {
         width: 100%;
     }
 
@@ -751,6 +755,45 @@
 svg{
     color: white;
 }
+.hide-on-search {
+    display: block;
+}
+
+body.search-active .hide-on-search {
+    display: none;
+}
+
+body.search-active .Product {
+    margin-top: 20px;
+}
+@media (min-width: 701px) {
+    .a-simple-paragraph {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .a-simple-paragraph > div:first-child {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    #doll-under-section {
+        flex: 0 0 130px;
+        width: 130px;
+        margin-left: 30px;
+    }
+}
+#no-result {
+    display: none;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10rem 0;
+    color: #475569;
+}
     </style>
 </head>
 <body>
@@ -758,7 +801,7 @@ svg{
         <div>
             <h1><span class="title1">A.R.Z toy</span><span class="title2">shop</span></h1>
         </div>
-        <div><input type="text" placeholder="محصول مورد نظر را وارد کنید..." id="main-search-box"></div>
+        <div><input type="text" placeholder="محصول مورد نظر را وارد کنید..." class="main-search-box" id="searchInput"></div>
         <nav>
             <a href="#">خانه</a>
             <a href="#simple-p">دسته‌بندی‌ها</a>
@@ -767,8 +810,8 @@ svg{
         </nav>
 
     </header>
-    <main>
-        <section class="a-simple-paragraph">
+    <main id="mainContent">
+        <section class="a-simple-paragraph hide-on-search">
             <div>
             <h2>دنیای رنگارنگ اسباب‌بازی‌ها 🎈</h2>
             <p class="p-under-section-div">اسباب‌بازی‌های جذاب برای کودکان، از عروسک و ماشین گرفته تا بازی‌های فکری و ساختنی.</p>
@@ -779,7 +822,7 @@ svg{
             </div>
         </section>
 
-        <section class="a-simple-paragraph-1" id="simple-p">
+        <section class="a-simple-paragraph-1 hide-on-search" id="simple-p">
             <h2>دسته بندی محصولات</h2>
             <div>
             <div class="Category">
@@ -828,9 +871,10 @@ svg{
         </section>
         <section class="Product" id="product">
             <div class="header-of-cards">
-            <h2>محصولات محبوب</h2>
-            <a href="#" class="a-under-header-of-cards">مشاهده همه ←</a>
+            <h2 class="hide-on-search">محصولات محبوب</h2>
+            <a href="#" class="a-under-header-of-cards hide-on-search">مشاهده همه ←</a>
             </div>
+            <p id="no-result">محصولی با این نام پیدا نشد 😕</p>
             <div class="main-div-under-product">
                 <div class="div-under-product">
                     <img src="./images/photo_2026-09-13_22-49-22.jpg" alt="ست نجاری دلر باتری خور">
@@ -953,5 +997,70 @@ svg{
         
     </footer>
     <p class="end-p">© تمامی حقوق برای A.R.Z toyshop محفوظ است.</p>
+    <script>
+const searchInput = document.querySelector("#searchInput");
+const productsContainer = document.querySelector(".main-div-under-product");
+const products = document.querySelectorAll(".div-under-product");
+const noResult = document.querySelector("#no-result");
+
+searchInput.addEventListener("input", function () {
+
+    const searchValue = searchInput.value
+        .trim()
+        .toLowerCase()
+        .replace(/ي/g, "ی")
+        .replace(/ك/g, "ک");
+
+    // فعال کردن حالت جستجو
+    if (searchValue !== "") {
+        document.body.classList.add("search-active");
+    } else {
+        document.body.classList.remove("search-active");
+    }
+
+    // جستجو بین محصولات
+    let foundProduct = false;
+
+    products.forEach(function (product) {
+
+        const productName = product.textContent
+            .toLowerCase()
+            .replace(/ي/g, "ی")
+            .replace(/ك/g, "ک");
+
+        if (productName.includes(searchValue)) {
+
+            product.style.display = "";
+            foundProduct = true;
+
+        } else {
+
+            product.style.display = "none";
+
+        }
+    });
+
+    // نمایش پیام در صورت پیدا نشدن محصول
+    if (searchValue !== "" && !foundProduct) {
+
+        noResult.style.display = "block";
+
+    } else {
+
+        noResult.style.display = "none";
+
+    }
+
+    // اسکرول به بخش محصولات
+    if (searchValue !== "") {
+
+        productsContainer.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+});
+    </script>
 </body>
 </html>
