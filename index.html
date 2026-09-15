@@ -998,7 +998,7 @@ body.search-active .Product {
         
     </footer>
     <p class="end-p">© تمامی حقوق برای A.R.Z toyshop محفوظ است.</p>
-    <script>
+<script>
 const searchInput = document.querySelector("#searchInput");
 const productsContainer = document.querySelector(".main-div-under-product");
 const products = document.querySelectorAll(".div-under-product");
@@ -1006,28 +1006,40 @@ const noResult = document.querySelector("#no-result");
 
 let searchStarted = false;
 
+
+// یکسان‌سازی متن فارسی
+function normalizeText(text) {
+    return text
+        .toLowerCase()
+        .trim()
+        .replace(/ي/g, "ی")
+        .replace(/ى/g, "ی")
+        .replace(/ك/g, "ک")
+        .replace(/آ/g, "ا")
+        .replace(/\u200c/g, " ")
+        .replace(/\s+/g, " ");
+}
+
+
 searchInput.addEventListener("input", function () {
 
-    const searchValue = searchInput.value
-        .trim()
-        .toLowerCase()
-        .replace(/ي/g, "ی")
-        .replace(/ك/g, "ک");
+    const searchValue = normalizeText(searchInput.value);
 
-    /* -------------------------
-       فعال / غیرفعال کردن حالت جستجو
-    ------------------------- */
+
+    /* =========================
+       حالت جستجو
+    ========================= */
 
     if (searchValue !== "") {
 
         document.body.classList.add("search-active");
 
-        /* فقط یک بار اسکرول شود */
+        // فقط یک بار اسکرول شود
         if (!searchStarted) {
 
             searchStarted = true;
 
-            /* فقط در دسکتاپ اسکرول خودکار انجام شود */
+            // فقط دسکتاپ
             if (window.innerWidth > 700) {
 
                 productsContainer.scrollIntoView({
@@ -1042,25 +1054,34 @@ searchInput.addEventListener("input", function () {
 
         document.body.classList.remove("search-active");
 
-        /* وقتی سرچ پاک شد، جستجو دوباره از اول شروع شود */
         searchStarted = false;
     }
 
 
-    /* -------------------------
-       جستجو بین محصولات
-    ------------------------- */
+    /* =========================
+       جستجوی محصولات
+    ========================= */
 
     let foundProduct = false;
 
+    // کلمات جستجو را جدا می‌کنیم
+    const searchWords = searchValue.split(" ");
+
+
     products.forEach(function (product) {
 
-        const productName = product.textContent
-            .toLowerCase()
-            .replace(/ي/g, "ی")
-            .replace(/ك/g, "ک");
+        const productText = normalizeText(product.textContent);
 
-        if (productName.includes(searchValue)) {
+
+        // بررسی می‌کنیم تمام کلمات سرچ داخل محصول وجود داشته باشند
+        const matches = searchWords.every(function (word) {
+
+            return productText.includes(word);
+
+        });
+
+
+        if (matches) {
 
             product.style.display = "";
             foundProduct = true;
@@ -1074,9 +1095,9 @@ searchInput.addEventListener("input", function () {
     });
 
 
-    /* -------------------------
-       پیام پیدا نشدن محصول
-    ------------------------- */
+    /* =========================
+       پیام محصول پیدا نشد
+    ========================= */
 
     if (searchValue !== "" && !foundProduct) {
 
@@ -1089,6 +1110,6 @@ searchInput.addEventListener("input", function () {
     }
 
 });
-    </script>
+</script>
 </body>
 </html>
