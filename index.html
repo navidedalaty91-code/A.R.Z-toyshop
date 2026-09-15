@@ -1004,6 +1004,8 @@ const productsContainer = document.querySelector(".main-div-under-product");
 const products = document.querySelectorAll(".div-under-product");
 const noResult = document.querySelector("#no-result");
 
+let searchStarted = false;
+
 searchInput.addEventListener("input", function () {
 
     const searchValue = searchInput.value
@@ -1012,14 +1014,43 @@ searchInput.addEventListener("input", function () {
         .replace(/ي/g, "ی")
         .replace(/ك/g, "ک");
 
-    // فعال کردن حالت جستجو
+    /* -------------------------
+       فعال / غیرفعال کردن حالت جستجو
+    ------------------------- */
+
     if (searchValue !== "") {
+
         document.body.classList.add("search-active");
+
+        /* فقط یک بار اسکرول شود */
+        if (!searchStarted) {
+
+            searchStarted = true;
+
+            /* فقط در دسکتاپ اسکرول خودکار انجام شود */
+            if (window.innerWidth > 700) {
+
+                productsContainer.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+        }
+
     } else {
+
         document.body.classList.remove("search-active");
+
+        /* وقتی سرچ پاک شد، جستجو دوباره از اول شروع شود */
+        searchStarted = false;
     }
 
-    // جستجو بین محصولات
+
+    /* -------------------------
+       جستجو بین محصولات
+    ------------------------- */
+
     let foundProduct = false;
 
     products.forEach(function (product) {
@@ -1039,9 +1070,14 @@ searchInput.addEventListener("input", function () {
             product.style.display = "none";
 
         }
+
     });
 
-    // نمایش پیام در صورت پیدا نشدن محصول
+
+    /* -------------------------
+       پیام پیدا نشدن محصول
+    ------------------------- */
+
     if (searchValue !== "" && !foundProduct) {
 
         noResult.style.display = "block";
@@ -1052,15 +1088,6 @@ searchInput.addEventListener("input", function () {
 
     }
 
-    // اسکرول به بخش محصولات
-    if (searchValue !== "") {
-
-        productsContainer.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-    }
 });
     </script>
 </body>
