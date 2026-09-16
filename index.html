@@ -1000,112 +1000,20 @@ body.search-active .Product {
     <p class="end-p">© تمامی حقوق برای A.R.Z toyshop محفوظ است.</p>
 <script>
 const searchInput = document.querySelector("#searchInput");
-const productsContainer = document.querySelector(".main-div-under-product");
-const products = document.querySelectorAll(".div-under-product");
-const noResult = document.querySelector("#no-result");
 
-let searchStarted = false;
+searchInput.addEventListener("keydown", function(event) {
 
+    if (event.key === "Enter") {
 
-// یکسان‌سازی متن فارسی
-function normalizeText(text) {
-    return text
-        .toLowerCase()
-        .trim()
-        .replace(/ي/g, "ی")
-        .replace(/ى/g, "ی")
-        .replace(/ك/g, "ک")
-        .replace(/آ/g, "ا")
-        .replace(/\u200c/g, " ")
-        .replace(/\s+/g, " ");
-}
+        const searchValue = searchInput.value.trim();
 
+        if (searchValue !== "") {
 
-searchInput.addEventListener("input", function () {
-
-    const searchValue = normalizeText(searchInput.value);
-
-
-    /* =========================
-       حالت جستجو
-    ========================= */
-
-    if (searchValue !== "") {
-
-        document.body.classList.add("search-active");
-
-        // فقط یک بار اسکرول شود
-        if (!searchStarted) {
-
-            searchStarted = true;
-
-            // فقط دسکتاپ
-            if (window.innerWidth > 700) {
-
-                productsContainer.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
-        }
-
-    } else {
-
-        document.body.classList.remove("search-active");
-
-        searchStarted = false;
-    }
-
-
-    /* =========================
-       جستجوی محصولات
-    ========================= */
-
-    let foundProduct = false;
-
-    // کلمات جستجو را جدا می‌کنیم
-    const searchWords = searchValue.split(" ");
-
-
-    products.forEach(function (product) {
-
-        const productText = normalizeText(product.textContent);
-
-
-        // بررسی می‌کنیم تمام کلمات سرچ داخل محصول وجود داشته باشند
-        const matches = searchWords.every(function (word) {
-
-            return productText.includes(word);
-
-        });
-
-
-        if (matches) {
-
-            product.style.display = "";
-            foundProduct = true;
-
-        } else {
-
-            product.style.display = "none";
+            window.location.href =
+                "./search.html?search=" +
+                encodeURIComponent(searchValue);
 
         }
-
-    });
-
-
-    /* =========================
-       پیام محصول پیدا نشد
-    ========================= */
-
-    if (searchValue !== "" && !foundProduct) {
-
-        noResult.style.display = "block";
-
-    } else {
-
-        noResult.style.display = "none";
 
     }
 
