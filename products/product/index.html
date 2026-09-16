@@ -845,80 +845,7 @@
             </h2>
 
 
-            <div class="related-products">
-
-                <div class="related-card">
-
-                    <img
-                        src="../../images/photo_2026-09-13_22-49-35.jpg"
-                        alt="هواپیما کنترلی"
-                    >
-
-                    <h3>
-                        هواپیما کنترلی
-                    </h3>
-
-                    <p>
-                        ۳,۰۰۰,۰۰۰ تومان
-                    </p>
-                    <a href="#" class="button">مشاهده محصول</a>
-                </div>
-
-
-                <div class="related-card">
-
-                    <img
-                        src="../../images/photo_2026-09-13_22-49-33.jpg"
-                        alt="بوکسینگ شارژی بلوتوثی"
-                    >
-
-                    <h3>
-                        بوکسینگ شارژی بلوتوث
-                    </h3>
-
-                    <p>
-                        ۵,۱۰۰,۰۰۰ تومان
-                    </p>
-                    <a href="../product5/" class="button">مشاهده محصول</a>
-                </div>
-
-
-                <div class="related-card">
-
-                    <img
-                        src="../../images/photo_2026-09-13_22-49-30.jpg"
-                        alt="دوربین عکاسی چاپگر دار"
-                    >
-
-                    <h3>
-                        دوربین عکاسی چاپگر دار
-                    </h3>
-
-                    <p>
-                        ۴,۵۰۰,۰۰۰ تومان
-                    </p>
-                    <a href="#" class="button">مشاهده محصول</a>
-                </div>
-
-
-                <div class="related-card">
-
-                    <img
-                        src="../../images/photo_2026-09-13_22-49-22.jpg"
-                        alt="ست نجاری دلر باتری خور"
-                    >
-
-                    <h3>
-                        ست نجاری دلر باتری خور
-                    </h3>
-
-                    <p>
-                        ۲,۷۰۰,۰۰۰ تومان
-                    </p>
-                    <a href="../product3/" class="button">مشاهده محصول</a>
-                </div>
-
-            </div>
+            <div class="related-products"></div>
 
         </section>
     </main>
@@ -970,5 +897,29 @@
         
     </footer>
     <p class="end-p">© تمامی حقوق برای A.R.Z toyshop محفوظ است.</p>
+        <script src="../../js/products-data.js"></script>
+<script src="../../js/related-products.js"></script>
+
+<script>
+const searchInput = document.querySelector("#main-search-box");
+
+searchInput.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+
+        const searchValue = searchInput.value.trim();
+
+        if (searchValue !== "") {
+
+            window.location.href =
+                "../../search.html?search=" +
+                encodeURIComponent(searchValue);
+
+        }
+
+    }
+
+});
+</script>
 </body>
 </html>
