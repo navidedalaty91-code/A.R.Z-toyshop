@@ -734,17 +734,17 @@
     </p>
     <div class="main-div">
         <div class="div-under-div-img">
-        <img src="../../images/photo_2026-09-13_22-49-30.jpg" alt="ست ناخن و ارایشی" class="img-under-main-div">
+        <img src="" alt="" class="img-under-main-div product-image">
         </div>
         <div>
-            <h2 class="h2-under-div-under-div" style="line-height:2 ;">دوربین عکاسی چاپ سریع</h2>
+            <h2 class="h2-under-div-under-div product-name" style="line-height:2 ;"></h2>
             <p class="p-brother-of-h2">دوربین عکاسی چاپ سریع با رزولوشن ۱۲ مگاپیکسل، گزینه‌ای جذاب برای ثبت و چاپ سریع لحظه‌های خاطره‌انگیز است. طراحی جمع‌وجور و کاربردی آن، استفاده از دوربین را برای کودکان و علاقه‌مندان به عکاسی سرگرم‌کننده می‌کند.</p>
             <div class="star-mark"> 
                 <span class="half-star star">★</span><span class="star">★★★★</span>
                 <span class="mark">امتیاز ۴.۴ از ۵</span>
             </div>
             <div class="price-box">
-                <p class="second-p-under-price-box">۴,۵۰۰,۰۰۰ <span class="toman">تومان</span></p>
+                <p class="second-p-under-price-box product-price"><span class="toman"></span></p>
             </div>
             <p class="mojoodi">✓ موجود در انبار</p>
             <div class="buy-button-container">
@@ -888,8 +888,8 @@
         
     </footer>
     <p class="end-p">© تمامی حقوق برای A.R.Z toyshop محفوظ است.</p>
-        <script src="../../js/products-data.js"></script>
-<script src="../../js/related-products.js"></script>
+        <script type="module" src="../../js/products-data.js"></script>
+<script type="module" src="../../js/related-products.js"></script>
 <script>
 const searchInput = document.querySelector("#main-search-box");
 
@@ -910,6 +910,19 @@ searchInput.addEventListener("keydown", function(event) {
     }
 
 });
+</script>
+<script type="module"> 
+        import { products } from "../../js/products-data.js";
+
+const product = products.Instant_print_camera;
+
+document.querySelector(".product-name").textContent = product.name;
+
+document.querySelector(".product-price").textContent = product.price;
+
+document.querySelector(".product-image").src = product.image;
+
+document.querySelector(".product-image").alt = product.name;
 </script>
 </body>
 </html>
