@@ -3,7 +3,7 @@ const products = {
         name: "هواپیما کنترلی",
         price: "۳,۰۰۰,۰۰۰ تومان",
         image: "../../images/photo_2026-09-13_22-49-35.jpg",
-        link: "#"
+        link: "../product7/"
     },
 
     Rechargeable_Bluetooth_Boxing_Machine: {
