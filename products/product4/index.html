@@ -726,17 +726,17 @@
     </p>
     <div class="main-div">
         <div class="div-under-div-img">
-        <img src="../../images/photo_2026-09-13_22-49-25.jpg" alt="کنسول بازی 500 بازی" class="img-under-main-div">
+        <img src="" alt="" class="img-under-main-div product-image">
         </div>
         <div>
-            <h2 class="h2-under-div-under-div">تفنگ آبپاش و پرتاب توپ (دوکاره)</h2>
+            <h2 class="h2-under-div-under-div product-name"></h2>
             <p class="p-brother-of-h2">اسباب‌بازی آب‌پاش و توپ‌پرتاب‌کن، مناسب بازی و سرگرمی کودکان در فضای باز. طراحی سرگرم‌کننده و سبک آن، بازی را جذاب‌تر می‌کند.</p>
             <div class="star-mark"> 
                 <span class="star">☆★★★★</span>
                 <span class="mark">امتیاز ۴ از ۵</span>
             </div>
             <div class="price-box">
-                <p class="second-p-under-price-box">۲,۲۰۰,۰۰۰ <span class="toman">تومان</span></p>
+                <p class="second-p-under-price-box product-price"><span class="toman"></span></p>
             </div>
             <p class="mojoodi">✓ موجود در انبار</p>
             <div class="buy-button-container">
@@ -879,8 +879,8 @@
         
     </footer>
     <p class="end-p">© تمامی حقوق برای A.R.Z toyshop محفوظ است.</p>
-        <script src="../../js/products-data.js"></script>
-<script src="../../js/related-products.js"></script>
+        <script type="module" src="../../js/products-data.js"></script>
+<script type="module" src="../../js/related-products.js"></script>
 <script>
 const searchInput = document.querySelector("#main-search-box");
 
@@ -901,6 +901,19 @@ searchInput.addEventListener("keydown", function(event) {
     }
 
 });
+</script>
+<script type="module"> 
+        import { products } from "../../js/products-data.js";
+
+const product = products.Dual_function_ball_water_gun;
+
+document.querySelector(".product-name").textContent = product.name;
+
+document.querySelector(".product-price").textContent = product.price;
+
+document.querySelector(".product-image").src = product.image;
+
+document.querySelector(".product-image").alt = product.name;
 </script>
 </body>
 </html>
