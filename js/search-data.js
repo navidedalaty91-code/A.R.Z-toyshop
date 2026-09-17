@@ -3,7 +3,7 @@ const searchProducts = [
         name: "هواپیما کنترلی",
         price: "۳,۰۰۰,۰۰۰ تومان",
         image: "images/photo_2026-09-13_22-49-35.jpg",
-        link: "products/airplane/"
+        link: "products/product7/"
     },
 
     {
