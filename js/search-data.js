@@ -52,6 +52,6 @@ const searchProducts = [
         name: "دوربین عکاسی چاپ گردار",
         price: "۴,۵۰۰,۰۰۰ تومان",
         image: "images/photo_2026-09-13_22-49-30.jpg",
-        link: "products/camera/"
+        link: "products/product6/"
     }
 ];
