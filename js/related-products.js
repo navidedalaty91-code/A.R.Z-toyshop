@@ -1,12 +1,14 @@
+import { products } from "./products-data.js";
+
 const popularProducts = [
     "Remote_controlled_airplane",
-    "Instant_print_camera",
     "Rechargeable_Bluetooth_Boxing_Machine",
     "Dual_function_ball_water_gun",
     "Carpentry_set_with_battery_powered_drill",
     "Game_console_with_500_games",
     "Hair_braiding_set",
-    "Nail_and_Makeup_Set"
+    "Nail_and_Makeup_Set",
+    "Instant_print_camera"
 ];
 
 const relatedContainer = document.querySelector(".related-products");
