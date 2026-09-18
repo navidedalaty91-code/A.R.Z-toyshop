@@ -119,7 +119,7 @@ function applyFilters() {
             // بررسی دسته بندی
             const categoryMatch =
                 selectedCategory === "all" ||
-                product.category === selectedCategory;
+                product.category.includes(selectedCategory)
 
 
             // بررسی سرچ
