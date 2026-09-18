@@ -1,0 +1,1233 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="مشاهده همه محصولات فروشگاه A.R.Z Toyshop">
+
+    <title>همه محصولات | A.R.Z Toyshop</title>
+
+
+    <style>
+
+        /* =========================
+           FONT
+        ========================= */
+
+    @font-face {
+    font-family: "Vazir";
+    src : url(../../font/Vazir.woff2) format("woff2"),          
+    url(../../font/Vazir.woff) format("woff"),
+    url(../../font/Vazir.ttf) format("truetype");
+    font-weight: 400;
+    }
+    @font-face {
+    font-family: "Vazir";
+    src : url(../../font/Vazir-Black.woff2) format("woff2"),          
+    url(../../font/Vazir-Black.woff) format("woff"),
+    url(../../font/Vazir-Black.ttf) format("truetype");
+    font-weight: 900;
+    }
+    @font-face {
+    font-family: "Vazir";
+    src : url(../../font/Vazir-Medium.woff2) format("woff2"),          
+    url(../../font/Vazir-Medium.woff) format("woff"),
+    url(../../font/Vazir-Medium.ttf) format("truetype");
+    font-weight: 500;
+    }
+
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            
+        }
+
+        body {
+            font-family: Vazir;
+            background: #f5f7fb;
+            color: #172033;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            min-height: 80px;
+
+            background: rgba(255, 255, 255, 0.96);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 12px 6%;
+
+            border-bottom: 1px solid #e8ebf2;
+
+            position: fixed;
+            top: 0;
+            right: 0;
+
+            z-index: 1000;
+
+            backdrop-filter: blur(12px);
+        }
+
+
+        .logo {
+            font-size: 27px;
+            font-weight: 900;
+
+            white-space: nowrap;
+        }
+
+
+        .logo span {
+            color: #0018ff;
+        }
+
+
+        nav {
+            display: flex;
+            align-items: center;
+
+            gap: 28px;
+        }
+
+
+        nav a {
+            color: #374151;
+
+            font-size: 15px;
+            font-weight: 500;
+
+            transition: 0.2s;
+        }
+
+
+
+
+
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            width: 90%;
+            max-width: 1300px;
+
+            margin: 130px auto 70px;
+        }
+
+
+        /* =========================
+           PAGE TITLE
+        ========================= */
+
+        .page-header {
+            margin-bottom: 30px;
+        }
+
+
+        .page-header h1 {
+            font-size: 34px;
+
+            font-weight: 900;
+
+            color: #111827;
+
+            margin-bottom: 10px;
+        }
+
+
+        .page-header p {
+            color: #6b7280;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           TOOLS
+        ========================= */
+
+        .products-tools {
+
+            background: #ffffff;
+
+            border: 1px solid #e8ebf2;
+
+            border-radius: 18px;
+
+            padding: 15px;
+
+            margin-bottom: 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+
+        /* SEARCH */
+
+        .search-box {
+            flex: 1;
+
+            position: relative;
+        }
+
+
+        .search-box input {
+
+            width: 100%;
+
+            height: 48px;
+
+            border: 1px solid #dfe3eb;
+
+            border-radius: 12px;
+
+            outline: none;
+
+            padding: 0 18px;
+
+            font-size: 14px;
+
+            background: #f8fafc;
+
+            transition: 0.2s;
+        }
+
+
+        .search-box input:focus {
+
+            border-color: #0018ff;
+
+            background: white;
+        }
+
+
+        /* SELECT */
+
+        .category-filter {
+
+            width: 210px;
+
+            height: 48px;
+
+            border: 1px solid #dfe3eb;
+
+            border-radius: 12px;
+
+            outline: none;
+
+            padding: 0 15px;
+
+            background: #f8fafc;
+
+            font-size: 14px;
+
+            cursor: pointer;
+        }
+
+
+        .category-filter:focus {
+
+            border-color: #0018ff;
+        }
+
+
+        /* =========================
+           PRODUCT GRID
+        ========================= */
+
+        .products-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* =========================
+           PRODUCT CARD
+        ========================= */
+
+        .product-card {
+
+            background: #ffffff;
+
+            border: 1px solid #e8ebf2;
+
+            border-radius: 20px;
+
+            padding: 15px;
+
+            overflow: hidden;
+
+            transition: 0.25s;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+
+
+
+        /* IMAGE */
+
+        .product-image {
+
+            width: 100%;
+
+            height: 230px;
+
+            object-fit: contain;
+
+            background: #f8fafc;
+
+            border-radius: 15px;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* NAME */
+
+        .product-name {
+
+            font-size: 16px;
+
+            font-weight: 900;
+
+            line-height: 1.7;
+
+            margin-bottom: 8px;
+
+            color: #111827;
+        }
+
+
+        /* DESCRIPTION */
+
+        .product-description {
+
+            color: #6b7280;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            margin-bottom: 18px;
+
+            flex: 1;
+        }
+
+
+        /* BOTTOM */
+
+        .product-bottom {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+        }
+
+
+        /* PRICE */
+
+        .product-price {
+
+            color: #0018ff;
+
+            font-size: 17px;
+
+            font-weight: 900;
+
+            white-space: nowrap;
+        }
+
+
+        /* BUTTON */
+
+        .product-button {
+
+            background: #facc15;
+
+            color: black;
+
+            font-weight: 500;
+
+            padding: 10px 14px;
+
+            border-radius: 10px;
+
+            font-size: 12px;
+
+            white-space: nowrap;
+
+            transition: 0.2s;
+        }
+
+
+
+
+
+        /* =========================
+           NO RESULT
+        ========================= */
+
+        .no-result {
+
+            display: none;
+
+            text-align: center;
+
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 50px 20px;
+
+            color: #6b7280;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #111827;
+
+            color: white;
+
+            padding: 50px 6%;
+
+            margin-top: 80px;
+        }
+
+
+        .footer-content {
+
+            max-width: 1300px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr;
+
+            gap: 40px;
+        }
+
+
+        footer h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 15px;
+        }
+
+
+        footer p,
+        footer a {
+
+            color: #aeb5c3;
+
+            font-size: 14px;
+
+            line-height: 2;
+        }
+
+
+        footer a {
+
+            display: block;
+
+            transition: 0.2s;
+        }
+
+
+
+
+
+        .copyright {
+
+            max-width: 1300px;
+
+            margin: 40px auto 0;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #293241;
+
+            text-align: center;
+
+            color: #8d95a4;
+
+            font-size: 13px;
+        }
+
+        .footer{
+    background-color: #1e3a8a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        margin-top: 3rem;
+        height: 12rem;
+        line-height: 2;
+        color: #fff;
+}
+.quick-access{
+    display: flex;
+    flex-direction: column;
+}
+.footer-head{
+    font-size: 1.1rem;
+    font-weight: 900;
+    line-height: 3;
+}
+.quick-access a{
+    text-decoration: none;
+    color: #fff;
+}
+.main-div-in-footer{
+    display: flex;
+    align-items: flex-start;
+    gap: 10rem;
+    border-bottom:1px #fff solid;
+}
+.social-icons{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons svg{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.end-p{
+    background-color: #1e3a8a;
+    padding: 1rem 0;
+    text-align: center;
+    color: #fff;
+}
+/* ========================================
+   DESKTOP
+======================================== */
+
+@media (min-width: 1101px) {
+
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+
+/* ========================================
+   LAPTOP
+======================================== */
+
+@media (max-width: 1100px) {
+
+    header {
+        padding: 12px 4%;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    main {
+        width: 92%;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .main-div-in-footer {
+        gap: 5rem;
+    }
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 800px) {
+
+    header {
+        min-height: 75px;
+        padding: 10px 4%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        gap: 18px;
+        order: 2;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    main {
+        width: 94%;
+        margin-top: 140px;
+        margin-bottom: 50px;
+    }
+
+    .page-header {
+        margin-bottom: 22px;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .page-header p {
+        font-size: 14px;
+    }
+
+    .products-tools {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .search-box input {
+        height: 48px;
+    }
+
+    .category-filter {
+        width: 100%;
+        height: 48px;
+    }
+
+    /* دو محصول کنار هم */
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .product-card {
+        padding: 10px;
+        border-radius: 17px;
+        min-width: 0;
+    }
+
+    .product-image {
+        height: 190px;
+        margin-bottom: 10px;
+    }
+
+    .product-name {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .product-description {
+        font-size: 11px;
+        line-height: 1.8;
+        margin-bottom: 12px;
+    }
+
+    .product-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 7px;
+    }
+
+    .product-price {
+        font-size: 14px;
+        text-align: right;
+    }
+
+    .product-button {
+        width: 100%;
+        text-align: center;
+        padding: 9px 5px;
+        font-size: 11px;
+    }
+
+    /* FOOTER */
+
+    .footer {
+        height: auto;
+        padding: 35px 5%;
+        margin-top: 50px;
+    }
+
+    .main-div-in-footer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 25px;
+    }
+
+    .main-div-in-footer > div:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-head {
+        font-size: 1rem;
+        line-height: 2.5;
+    }
+
+    .quick-access {
+        gap: 3px;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+        margin-top: 8px;
+    }
+
+    .end-p {
+        font-size: 12px;
+        padding: 14px 10px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+    header {
+        min-height: 80px;
+        padding: 9px 3%;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    main {
+        width: 94%;
+        margin-top: 145px;
+    }
+
+    .page-header h1 {
+        font-size: 25px;
+        margin-bottom: 8px;
+    }
+
+    .page-header p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .products-tools {
+        border-radius: 15px;
+        padding: 10px;
+    }
+
+    .search-box input {
+        font-size: 13px;
+        padding: 0 14px;
+    }
+
+    .category-filter {
+        font-size: 13px;
+        padding: 0 12px;
+    }
+
+    /* دو محصول کنار هم در موبایل */
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .product-card {
+        padding: 9px;
+        border-radius: 15px;
+    }
+
+    .product-image {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 9px;
+    }
+
+    .product-name {
+        font-size: 13px;
+        line-height: 1.7;
+        margin-bottom: 5px;
+    }
+
+    .product-description {
+        font-size: 10px;
+        line-height: 1.8;
+        margin-bottom: 10px;
+    }
+
+    .product-bottom {
+        gap: 7px;
+    }
+
+    .product-price {
+        font-size: 12px;
+    }
+
+    .product-button {
+        font-size: 10px;
+        padding: 8px 4px;
+    }
+
+    .no-result {
+        padding: 40px 15px;
+        font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    .footer {
+        padding: 30px 5%;
+    }
+
+    .main-div-in-footer {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .main-div-in-footer > div:first-child {
+        grid-column: auto;
+    }
+
+    .footer-head {
+        font-size: 1.05rem;
+    }
+
+    .quick-access {
+        align-items: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .social-icons svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .end-p {
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+}
+
+
+/* ========================================
+   VERY SMALL MOBILE
+======================================== */
+
+@media (max-width: 360px) {
+
+    .logo {
+        font-size: 30px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    main {
+        width: 94%;
+        margin-top: 140px;
+    }
+
+    .page-header h1 {
+        font-size: 22px;
+    }
+
+    .products-grid {
+        gap: 8px;
+    }
+
+    .product-card {
+        padding: 7px;
+    }
+
+    .product-image {
+        height: 125px;
+    }
+
+    .product-name {
+        font-size: 12px;
+    }
+
+    .product-description {
+        font-size: 9px;
+    }
+
+    .product-price {
+        font-size: 11px;
+    }
+
+    .product-button {
+        font-size: 9px;
+        padding: 7px 3px;
+    }
+
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+    nav a:hover {
+        color: #0018ff;
+    }
+
+    footer a:hover {
+        color: white;
+    }
+
+    .product-button:hover {
+        background: #fbbf24;
+        transform: translateY(-2px);
+    }
+
+    .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    }
+
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <a href="../../index.html" class="logo">
+            <span style="color: #f59e0b;">A.R.Z toy</span><span style="color: #2563eb;">shop</span>
+        </a>
+
+
+        <nav>
+
+            <a href="../../index.html">
+                خانه
+            </a>
+
+            <a href="./index.html">
+                محصولات
+            </a>
+
+            <a href="./index.html">
+                دسته‌بندی‌ها
+            </a>
+
+            <a href="#footer">
+                درباره ما
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+
+        <!-- TITLE -->
+
+        <div class="page-header">
+
+            <h1>
+                همه محصولات
+            </h1>
+
+            <p>
+                تمام محصولات A.R.Z Toyshop را مشاهده کنید.
+            </p>
+
+        </div>
+
+
+
+        <!-- SEARCH + FILTER -->
+
+        <div class="products-tools">
+
+            <div class="search-box" id="search">
+
+                <input
+                    type="search"
+                    id="productSearch"
+                    placeholder="جستجوی محصول..."
+                    style="font-family: Vazir;">
+
+            </div>
+
+
+            <select
+                class="category-filter"
+                id="categoryFilter" style="font-family: Vazir;">
+
+                <option value="all">
+                    همه دسته‌بندی‌ها
+                </option>
+
+                <option value="digital">
+                    دیجیتال
+                </option>
+
+                <option value="remote">
+                    کنترلی
+                </option>
+
+                <option value="console">
+                    کنسول
+                </option>
+
+                <option value="makeup">
+                    آرایشی
+                </option>
+
+                <option value="action">
+                    اکشن
+                </option>
+
+                <option value="tools">
+                    ابزار
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div class="products-grid" id="productsGrid">
+
+
+
+         <article class="product-card">
+
+                <img
+                    src="./images/product.jpg"
+                    alt="نام محصول"
+                    class="product-image">
+
+
+                <h2 class="product-name">
+                    نام محصول
+                </h2>
+
+
+                <p class="product-description">
+
+                    توضیحات محصول در این قسمت قرار می‌گیرد.
+
+                </p>
+
+
+                <div class="product-bottom">
+
+                    <span class="product-price">
+                        ۱,۰۰۰,۰۰۰ تومان
+                    </span>
+
+
+                    <a
+                        href="#"
+                        class="product-button">
+
+                        مشاهده محصول
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div> 
+
+
+
+        <!-- NO RESULT -->
+
+        <div
+            class="no-result"
+            id="noResult">
+
+            محصولی پیدا نشد.
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+        <footer class="footer" id="footer">
+        <div  class="main-div-in-footer">
+        <div>
+        <h6 class="footer-head">🧸A.R.Z toyshop</h6>
+        <p>فروشگاه آنلاین اسباب‌بازی با مجموعه‌ای<br> از محصولات جذاب و سرگرم‌کننده برای کودکان.</p>
+        </div>
+        <div>
+            <h6 class="footer-head">دسترسی سریع</h6>
+            <div class="quick-access">
+                <a href="../../index.html">خانه</a>
+                <a href="./index.html">محصولات</a>
+                <a href="./index.html">دسته بندی ها</a>
+            </div>
+        </div>
+        <div>
+            <h6 class="footer-head">ارتباط با ما</h6>
+            <a href="tel:05133682848" style="text-decoration: none;color: #fff">تلفن: 05133682848</a>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/arz_toys?stkn=MTI5OXJsMmo5ZjV4Yw==">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon1"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+            </a>
+            <a href="https://t.me/joinchat/AAAAAD0H10K_He_VM_z60Q">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon2"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="currentColor">
+                <path d="M21.9 4.2 18.8 19c-.2 1-1.1 1.3-1.9.8l-5.4-4-2.6 2.5c-.3.3-.5.5-1 .5l.4-5.5 10-9c.4-.4-.1-.6-.6-.2L5.3 12.2.1 10.6c-1.1-.3-1.1-1.1.2-1.6L20.5 1.3c.9-.3 1.7.2 1.4 1.9z"/>
+            </svg>
+            </a>
+            </div>
+        </div>
+        </div>
+        
+    </footer>
+    <p class="end-p">© تمامی حقوق برای A.R.Z toyshop محفوظ است.</p>
+<script type="module" src="../../js/products-page.js"></script>
+</body>
+
+</html>
