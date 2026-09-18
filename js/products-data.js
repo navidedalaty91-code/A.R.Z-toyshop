@@ -5,7 +5,7 @@ const products = {
         image: "../../images/photo_2026-09-13_22-49-35.jpg",
         description: "پروازی هیجان‌انگیز و سرگرم‌کننده ✈️",
         link: "../../products/product7/",
-        category: "remote"
+        category: ["remote","action"]
     },
 
     Rechargeable_Bluetooth_Boxing_Machine: {
@@ -14,7 +14,7 @@ const products = {
         image: "../../images/photo_2026-09-13_22-49-33.jpg",
         description: "مبارزه هیجان‌انگیز با بلوتوث 🥊",
         link: "../../products/product5/",
-        category: "action"
+        category: ["action","digital"]
     },
 
     Dual_function_ball_water_gun: {
@@ -41,7 +41,7 @@ const products = {
         image: "../../images/photo_2026-09-13_22-49-28.jpg",
         description: "گیم‌پد شارژی با ۵۰۰ بازی متنوع 🎮",
         link: "../../products/product/",
-        category: "console"
+        category: ["console","digital"]
     },
 
     Hair_braiding_set: {
