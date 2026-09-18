@@ -224,6 +224,7 @@
     background-color: #f8fafc;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 2rem 0;
     border-radius: 15px;
 }
@@ -341,11 +342,6 @@
             color: #1d4ed8;
             font-weight: 900;
         }
-        
-            .related-card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 10px 25px rgba(0,0,0,.12);
-            }
             .footer{
     background-color: #1e3a8a;
     display: flex;
@@ -412,7 +408,7 @@
 }
 
 /* =========================
-   Tablet
+   Tablet / Laptop
 ========================= */
 
 @media (max-width: 1200px) {
@@ -427,8 +423,12 @@
         margin-right: 3rem;
     }
 
+    .div-under-div-img {
+        width: 27rem;
+    }
+
     .img-under-main-div {
-        width: 25rem;
+        width: 22rem;
     }
 
     .button-for-buy {
@@ -442,7 +442,8 @@
     }
 
     .related-products {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
     }
 
     .main-div-in-footer {
@@ -500,7 +501,10 @@
     }
 
     .div-under-div-img {
+        width: 90%;
+        max-width: 30rem;
         margin: 1rem 0;
+        padding: 1rem;
     }
 
     .img-under-main-div {
@@ -534,6 +538,20 @@
     .related {
         margin-left: 1.5rem;
         margin-right: 1.5rem;
+    }
+
+    /* دو محصول محبوب کنار هم */
+    .related-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .related-card {
+        padding: 10px;
+    }
+
+    .related-card img {
+        height: 140px;
     }
 
     .main-div-in-footer {
@@ -573,10 +591,18 @@
 
     .main-div {
         margin: 1rem;
+        padding: .8rem;
+    }
+
+    .div-under-div-img {
+        width: 100%;
+        max-width: 25rem;
+        padding: .8rem;
     }
 
     .img-under-main-div {
         width: 18rem;
+        max-width: 100%;
     }
 
     .h2-under-div-under-div {
@@ -609,13 +635,30 @@
         margin-right: 1rem;
     }
 
+    /* دو محصول محبوب در هر ردیف */
     .related-products {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .related-card {
+        padding: 9px;
+        border-radius: 12px;
     }
 
     .related-card img {
-        height: auto;
+        height: 120px;
         aspect-ratio: 16 / 9;
+    }
+
+    .related-card h3 {
+        font-size: .85rem;
+        line-height: 1.7;
+        margin-bottom: 7px;
+    }
+
+    .related-card p {
+        font-size: .8rem;
     }
 
     .main-div-in-footer {
@@ -645,7 +688,7 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 5px;
+        gap: 10px;
     }
 
     nav a {
@@ -661,8 +704,14 @@
         padding: .7rem;
     }
 
+    .div-under-div-img {
+        width: 100%;
+        padding: .5rem;
+    }
+
     .img-under-main-div {
         width: 15rem;
+        max-width: 100%;
     }
 
     .button-for-buy {
@@ -683,18 +732,61 @@
         margin-left: .7rem;
         margin-right: .7rem;
     }
+
+    /* حتی در گوشی خیلی کوچک هم ۲تایی */
+    .related-products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .related-card {
+        padding: 7px;
+    }
+
+    .related-card img {
+        height: 100px;
+    }
+
+    .related-card h3 {
+        font-size: .75rem;
+        line-height: 1.6;
+    }
+
+    .related-card p {
+        font-size: .7rem;
+    }
 }
- @media (max-width: 600px) and (min-width: 400px) {
+
+
+/* =========================
+   Search Box: 400–600px
+========================= */
+
+@media (max-width: 600px) and (min-width: 400px) {
+
     #main-search-box {
         width: 20rem;
     }
 }
+
+
+/* =========================
+   Hover فقط برای موس
+========================= */
+
 @media (hover: hover) and (pointer: fine) {
-    .img-under-main-div:hover{
-    transform: scale(1.05);
-}
-    #main-search-box:hover{
+
+    .img-under-main-div:hover {
+        transform: scale(1.05);
+    }
+
+    #main-search-box:hover {
         background-color: #bebebe;
+    }
+
+    .related-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0,0,0,.12);
     }
 }
 
@@ -709,8 +801,8 @@
         <div><input type="text" placeholder="محصول مورد نظر را وارد کنید..." id="main-search-box"></div>
         <nav>
             <a href="../../index.html">خانه</a>
-            <a href="#">دسته‌بندی‌ها</a>
-            <a href="#">محصولات</a>
+            <a href="../../all/all products/">دسته‌بندی‌ها</a>
+            <a href="../../all/all products/">محصولات</a>
             <a href="#footer">درباره ما</a>
         </nav>
 
@@ -720,7 +812,7 @@
     <p class="first-p-i-write">
         <a href="../../index.html">خانه</a>
             ←
-        <a href="#"> محصولات</a>
+        <a href="../../all/all products/"> محصولات</a>
             ←
          کنسول بازی
     </p>
@@ -841,8 +933,8 @@
             <h6 class="footer-head">دسترسی سریع</h6>
             <div class="quick-access">
                 <a href="../../index.html">خانه</a>
-                <a href="#">محصولات</a>
-                <a href="#">دسته بندی ها</a>
+                <a href="../../all/all products/">محصولات</a>
+                <a href="../../all/all products/">دسته بندی ها</a>
             </div>
         </div>
         <div>
